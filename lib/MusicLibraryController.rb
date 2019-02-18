@@ -43,10 +43,17 @@ class MusicLibraryController
 
   def list_artists
 
+<<<<<<< HEAD
     sorted_artist_names = Artist.all.sort {|artist1, artist2| artist1.name<=>artist2.name}
 
     sorted_artist_names.each_with_index {|artist, index| puts "#{index+1}. #{artist.name}"}
 
+=======
+    sorted_artist_names = Artist.all.sort_by {|artist| artist.name}
+    binding.pry
+    sorted_artist_names.each_with_index {|artist, index| puts "#{index+1}. #{artist.name}"}
+    # binding.pry
+>>>>>>> bc46adcf7863010c858a851e9e363b1c96a8e077
   end
 
   def list_genres
@@ -56,6 +63,7 @@ class MusicLibraryController
 
   def list_songs_by_artist
     puts "Please enter the name of an artist:"
+<<<<<<< HEAD
     user_input = gets.chomp
       if Artist.find_by_name(user_input)
         artist = Artist.find_by_name(user_input)
@@ -86,5 +94,9 @@ class MusicLibraryController
   def sorted_songs
     sorted_song_names = Song.all.sort_by {|song| song.name}
     sorted_songs_stuff = sorted_song_names.each_with_index {|song, index| "#{index+1}. #{song.name} by #{song.artist.name}"}
+=======
+    sorted_song_names = Song.all.sort_by {|song| song.name}
+    sorted_song_names.each_with_index {|song, index| puts "#{index+1}. #{song.artist.name} - #{song.name}"}
+>>>>>>> bc46adcf7863010c858a851e9e363b1c96a8e077
   end
 end

@@ -7,7 +7,11 @@ class Genre
 
   def initialize(name)
     @name=name
+<<<<<<< HEAD
     # @@all << self
+=======
+    @@all << self
+>>>>>>> bc46adcf7863010c858a851e9e363b1c96a8e077
     @songs = []
   end
 
